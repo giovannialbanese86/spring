@@ -1,0 +1,25 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans-3.1.xsd
+http://www.springframework.org/schema/context
+http://www.springframework.org/schema/context/spring-context-3.1.xsd">
+
+	<context:component-scan base-package="com.mywebapp" />
+
+</beans>
+
+<!-- 
+	Spring in automatico legge da un file di configurazione chiamato applicationContext.xml(se lo trova - si puo anche configurare Spring da classi Java). Tale file serve per la configurazione dell IoC di spring
+	che si occupa dell' inject dei beans che devono essere noti tramite questo file o tramite annotazione
+	
+	Possiamo usare un file con un nome diverso per la dichiarazione dei beans e anche piu file diversi xml ma poi la configurazione deve essere fatta nelle classi java
+	creando un applicationContext e istruendolo ad andare a leggere da tali file xml.
+	
+	In questo file possiamo dichiarare i  bean oppure non farlo se usiamo le annotazioni.
+	
+	IMPORTANTE: context:component-scan base-package="com.mywebapp" /> scansiona per noi le classi annotate con @Component e suoi sottotipi in modo che spring sappia chi sono i beans
+	in modo da evitarci la dichiarazione negli stessi in questo file.
+	
+ -->

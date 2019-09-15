@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<faces-config xmlns="http://java.sun.com/xml/ns/javaee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee 
+	http://java.sun.com/xml/ns/javaee/web-facesconfig_2_1.xsd"
+	version="2.1">
+
+	<application>
+		<el-resolver>
+    		    org.springframework.web.jsf.el.SpringBeanFacesELResolver
+		</el-resolver>
+  	</application>
+ 
+</faces-config>
+
+<!-- 
+	JSF in automatico legge da un file di configurazione chiamato faces-config.xml (se lo trova - si puo anche configurare JSF da classi Java).Tale file serve per la configurazione dell IoC di JSF
+	che si occupa dell' inject dei managed beans che devono essere noti tramite questo file o tramite annotazione
+	
+	In questo file possiamo dichiarare i managed bean oppure non farlo se usiamo le annotazioni.
+	
+	IMPORTANTE: I bean di Spring vivono nel contesto di Spring mentre i Managed Bean di JSF vivono nel contesto di JSF. Ciò significa che le injection dei bean e/o managed bean sono fatte
+	dai rispettivi IoC Container.
+	Come possiamo fare in modo che i 2 Container possano lavorare insieme iniettando beans in managed beans e viceversa? Usando SpringBeanFacesELResolver
+ -->
